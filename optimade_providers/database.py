@@ -34,7 +34,6 @@ class DB(BaseModel):
 
         # Update the relationship
         self._providers_table[data.provider_id].databases.append(data)
-
         self._databases_table[data.id] = data
 
 
@@ -49,12 +48,12 @@ if __name__ == '__main__':
         homepage="https://www.materialscloud.org")
 
     db.register_database(
+        provider_id="mcloud",
         id="autowannier",
         name="Automated high-throughput Wannierisation",
         description="Validation results of an automated protocol for generating maximally-localized Wannier "
                     "functions in a high-throughput framework.",
         homepage="https://materialscloud.org/discover/autowannier",
-        provider_id="mcloud",
         api_versions=[
             {
                 "version": "0.10",
