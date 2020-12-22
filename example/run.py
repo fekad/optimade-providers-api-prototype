@@ -41,89 +41,71 @@ db.register_provider(
     homepage="https://odbx.science"
 )
 
-db.register_database(
+db.register_database("mcloud",
     id="autowannier",
     name="Automated high-throughput Wannierisation",
     description="Validation results of an automated protocol for generating maximally-localized Wannier "
                 "functions in a high-throughput framework.",
     homepage="https://materialscloud.org/discover/autowannier",
-    provider_id="mcloud",
     api_versions=[{"version": "0.10",
                    "base_url": "https://dev-aiida-dev.materialscloud.org/autowannier/optimade/v0.10/"}]
 )
 
-db.register_database(
-    id="autowannier",
-    name="Automated high-throughput Wannierisation",
-    description="Validation results of an automated protocol for generating maximally-localized Wannier "
-                "functions in a high-throughput framework.",
-    homepage="https://materialscloud.org/discover/autowannier",
-    provider_id="mcloud",
-    api_versions=[{"version": "0.10",
-                   "base_url": "https://dev-aiida-dev.materialscloud.org/autowannier/optimade/v0.10/"}]
-)
-
-db.register_database(
+db.register_database("mcloud",
     id="curated-cofs",
     name="CURATED covalent organic frameworks database",
     description="Database of experimentally reported Covalent-Organic Frameworks (COFs), provided with "
                 "DFT-optimized geometry and DDEC partial charges for molecular simulations.",
     homepage="https://materialscloud.org/discover/curated-cofs",
-    provider_id="mcloud",
     api_versions=[{"version": "0.10",
                    "base_url": "https://dev-aiida-dev.materialscloud.org/curated-cofs/optimade/v0.10/"}]
 )
 
-db.register_database(
+db.register_database("mcloud",
     id="optimade-sample",
     name="OPTIMADE Sample Database",
     description="Database with example structures for OPTIMADE tests.",
     homepage="https://materialscloud.org",
-    provider_id="mcloud",
     api_versions=[{"version": "0.10",
                    "base_url": "https://dev-aiida-dev.materialscloud.org/optimade-sample/optimade/v0.10/"}]
 )
 
-db.register_database(
+db.register_database("mcloud",
     id="3dd",
     name="Three-dimensional crystals database",
     description="Curated set of relaxed three-dimensional crystal structures based on raw CIF data from the "
                 "experimantal databases MPDS, COD, and ICSD.",
     homepage="https://materialscloud.org",
-    provider_id="mcloud",
     api_versions=[{"version": "0.10",
                    "base_url": "https://dev-aiida-dev.materialscloud.org/3dd/optimade/v0.10/"}]
 )
 
-db.register_database(
+db.register_database("mcloud",
     id="hcofs-co2",
     name="COFs for CO2 capture and storage applications",
     description="A curated set of COFs with the highest Henry coefficient for CO2, where the full CO2 and N2 "
                 "isotherm and the parasitic energy for the process have been computed.",
     homepage="https://materialscloud.org",
-    provider_id="mcloud",
     api_versions=[{"version": "0.10",
                    "base_url": "https://dev-aiida-dev.materialscloud.org/hcofs-co2/optimade/v0.10/"}]
 )
 
-db.register_database(
+db.register_database("cod",
     id="cod",
     name="Crystallography Open Database",
     description="Open-access collection of crystal structures of organic, inorganic, metal-organics compounds "
                 "and minerals, excluding biopolymers",
     homepage="https://www.crystallography.net/cod",
-    provider_id="cod",
     api_versions=[{"version": "0.10",
                    "base_url": "http://www.crystallography.net/cod/optimade/v0.10.0/"}]
 )
 
-db.register_database(
+db.register_database("odbx",
     id="odbx",
     name="open database of xtals",
     description="A public database of crystal structures mostly derived from ab initio structure prediction "
                 "from the group of Dr Andrew Morris at the University of Birmingham https://ajm143.github.io",
     homepage="https://odbx.science",
-    provider_id="odbx",
     api_versions=[{"version": "0.10",
                    "base_url": "https://optimade.odbx.science/v0.10/"},
                   {"version": "0.10.1",

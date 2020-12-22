@@ -25,10 +25,13 @@ class ProviderDatabase(BaseModel):
 
         self._table[data.id] = data
 
-    def register_database(self, provider_id: str, **kwargs):
+    def register_database(self, provider_id: str, /, **kwargs):
         data = Database(**kwargs)
 
         if provider_id not in self._table:
+            raise KeyError
+
+        if data.id in self._table[provider_id].databases:
             raise KeyError
 
         self._table[provider_id].databases[data.id] = data
