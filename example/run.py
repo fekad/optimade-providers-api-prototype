@@ -1,5 +1,4 @@
-from optimade_providers.app import ProvidersAPI
-from optimade_providers.database import db
+from optimade_providers_api import ProvidersAPI, db
 
 app = ProvidersAPI(
     title="OPTIMADE Providers Index Meta-Database",

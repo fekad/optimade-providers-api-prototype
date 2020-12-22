@@ -1,9 +1,9 @@
 from enum import Enum
-from typing import List, Optional
+from typing import List, Dict, Optional
 from pydantic import BaseModel, HttpUrl
 
 
-class APIVerisons(BaseModel):
+class APIVersion(BaseModel):
     version: str
     base_url: HttpUrl
 
@@ -17,9 +17,9 @@ class APIVerisons(BaseModel):
 
 
 class State(str, Enum):
-    available = 'available'
-    unavailable = 'unavailable'
-    unknown = 'unknown'
+    available = "available"
+    unavailable = "unavailable"
+    unknown = "unknown"
 
 
 class Status(BaseModel):
@@ -30,10 +30,9 @@ class Status(BaseModel):
 class Database(BaseModel):
     id: str
     name: str
-    description: Optional[str] = ""
-    homepage: Optional[HttpUrl] = ""
-    provider_id: str
-    api_versions: Optional[List[APIVerisons]] = []
+    description: Optional[str]
+    homepage: Optional[HttpUrl]
+    api_versions: Optional[List[APIVersion]] = []
 
     # TODO: Supporting only a the latest version
     # base_url: HttpUrl
@@ -47,9 +46,7 @@ class Database(BaseModel):
                 "description": "a short description of the database",
                 "homepage": "https://example.com",
                 "latest_api_version": "v0.10.1",
-                "provider_id": "exmpl",
-                "api_versions": [APIVerisons.Config.schema_extra['example']]
-
+                "api_versions": [APIVersion.Config.schema_extra["example"]],
             }
         }
 
@@ -59,7 +56,7 @@ class Provider(BaseModel):
     name: str
     description: str
     homepage: HttpUrl
-    databases: Optional[List[Database]] = []
+    databases: Dict[str, Database] = {}
 
     # TODO: Using set instead of list
     # databases: Optional[Set[Database]] = set()
@@ -71,6 +68,6 @@ class Provider(BaseModel):
                 "name": "Example provider",
                 "description": "Provider used for examples, not to be assigned to a real database",
                 "homepage": "https://example.com",
-                "databases": [Database.Config.schema_extra['example']],
+                "databases": [Database.Config.schema_extra["example"]],
             }
         }
